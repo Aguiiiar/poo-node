@@ -1,0 +1,1 @@
+Repositório para guardar minhas práticas com POO utilizando nodejs c/ typescript.
