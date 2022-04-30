@@ -3,7 +3,7 @@ import cors from "cors";
 import dotnev from "dotenv";
 import ApiRouter from "./routes/api.routes"
 import errorMiddleware from "./middlewares/Error";
-import NotFound from "./exceptions/NotFound"
+import { NotFound } from "./exceptions/"
 
 dotnev.config();
 
@@ -28,7 +28,7 @@ class App {
     }
 
     private routes() {
-        this.app.use(ApiRouter.router);
+        this.app.use(ApiRouter);
         this.app.use((request, response) => {
             return response.send(new NotFound());
         });

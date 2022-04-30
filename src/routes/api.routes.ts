@@ -1,18 +1,9 @@
-import express, { Router, Request, Response } from "express";
+import express, { Router } from "express";
+import UserController from "controllers/UserController";
+const router = Router();
 
-class ApiRouter {
-    public router: express.Router;
 
-    constructor() {
-        this.router = Router();
-        this.Routes();
-    }
+router.get("/", UserController.index);
 
-    public Routes() {
-        this.router.get('/', async (req: Request, res: Response): Promise<Response> => {
-            return res.send("Oi");
-        });
-    }
-}
 
-export default new ApiRouter();
+export default router;
